@@ -14,9 +14,8 @@
   </nav>
 
   <div class="container">
-    <a class="btn btn-dark back-button" href="/admin">Admin</a>
-
-    <h1>All Posts</h1>
+    <a class="btn btn-dark back-button" href="/">Home</a>
+    <h1>Admin Dashboard</h1>
     <hr />
     <% if (posts.length > 0) { %>
     <div class="posts">
@@ -28,12 +27,12 @@
         <p>
           <%- post.body.substring(0, 100)+"..." %><a href='/posts/<%= post.title %>'> Read More</a>
         </p>
-        <!-- <div class="actions">
+        <div class="actions">
           <form action="/delete-post/<%= post.title %>" method="POST">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
             <a href="/edit-post/<%= post.title %>" class="btn btn-warning">Edit</a>
-        </div> -->
+        </div>
       </div>
       <% } %>
     </div>

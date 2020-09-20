@@ -31,7 +31,7 @@ router.post("/edit-post", (req, res) => {
     }
   }).then(result => {
     console.log("Successfully updated.");
-    res.redirect("/");
+    res.redirect("/admin");
   }).catch(error => console.log(error));
 });
 

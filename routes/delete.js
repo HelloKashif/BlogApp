@@ -13,7 +13,7 @@ router.post("/delete-post/:postname", (req, res) => {
           title: _.startCase(requestedTitle)
         }).then(result => {
           console.log("Successfully deleted.");
-          res.redirect("/");
+          res.redirect("/admin");
         }).catch(error => console.log(error));
       }
     }

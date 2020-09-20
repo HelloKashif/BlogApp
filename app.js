@@ -12,6 +12,7 @@ const composeRouter = require("./routes/compose");
 const postRouter = require("./routes/post");
 const deleteRouter = require("./routes/delete");
 const editRouter = require("./routes/edit");
+const adminRouter = require("./routes/admin");
 
 app.set('view engine', 'ejs');
 app.set("views", "views");
@@ -26,6 +27,7 @@ app.use(composeRouter.route);
 app.use(postRouter.route);
 app.use(deleteRouter.route);
 app.use(editRouter.route);
+app.use(adminRouter.route);
 
 db.connect(() => {
   app.listen(port, () => {
