@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <nav class="navbar navbar-default" style="background-color: #B8C5D6;">
+    <div class="container">
+      <div class="navbar-header" style="color: #272D2D">
+        <p><a class="navbar-brand" href="/">BLOG</a></p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home"><a href="/" class="<%= path === 'home' ? 'active' : '' %>">HOME</a></li>
+        <li id="compose"><a href="/compose" class="<%= path === 'compose' ? 'active' : '' %>">COMPOSE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Compose</h1>
+    <form action="/compose" method="POST">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="postTitle" autofocus>
+        <label>Post</label>
+        <textarea name="postBody" cols="30" rows="5" class="form-control"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>

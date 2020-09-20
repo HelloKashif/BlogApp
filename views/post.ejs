@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <nav class="navbar navbar-default" style="background-color: #B8C5D6;">
+    <div class="container">
+      <div class="navbar-header" style="color: #272D2D">
+        <p><a class="navbar-brand" href="/">BLOG</a></p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home"><a href="/" class="<%= path === 'home' ? 'active' : '' %>">HOME</a></li>
+        <li id="compose"><a href="/compose" class="<%= path === 'compose' ? 'active' : '' %>">COMPOSE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a class="btn btn-dark back-button" href="/">Back</a>
+    <div class="post__detail">
+      <h1>
+        <%= post.title %>
+      </h1>
+      <hr>
+      <p>
+        <%= post.body %>
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
