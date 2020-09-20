@@ -2,9 +2,9 @@ const {
   MongoClient
 } = require("mongodb");
 
-const databaseName = "DailyJournal";
+const databaseName = "Blog";
 
-const url = `mongodb+srv://kamal:47DchnuJQXUab7CJ@cluster0.i0nym.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://maybesmurf:hjysadyfguiYG&U@cluster0.i0nym.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
 
 let _db;
 
