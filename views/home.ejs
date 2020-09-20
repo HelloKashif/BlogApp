@@ -28,12 +28,6 @@
         <p>
           <%- post.body.substring(0, 100)+"..." %><a href='/posts/<%= post.title %>'> Read More</a>
         </p>
-        <!-- <div class="actions">
-          <form action="/delete-post/<%= post.title %>" method="POST">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-            <a href="/edit-post/<%= post.title %>" class="btn btn-warning">Edit</a>
-        </div> -->
       </div>
       <% } %>
     </div>
