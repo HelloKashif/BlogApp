@@ -26,7 +26,11 @@
           <%= post.title %>
         </h1>
         <p>
+          <% if (post.body.length > 100) { %>
           <%- post.body.substring(0, 100)+"..." %><a href='/posts/<%= post.title %>'> Read More</a>
+          <% } else { %>
+          <%= post.body %>
+          <% } %>
         </p>
       </div>
       <% } %>
