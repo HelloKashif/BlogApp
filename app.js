@@ -29,7 +29,6 @@ app.use(editRouter.route);
 app.use(adminRouter.route);
 
 db.connect(() => {
-  // db.get().collection("posts").deleteMany({}).then(result => log("DELETED ALL")).catch(error => log(error));
   app.listen(port, () => {
     log(`Server listening on http://localhost:${port}`);
   });
