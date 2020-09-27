@@ -6,6 +6,7 @@ const db = require("./utils/database");
 const app = express();
 
 const port = process.env.PORT || 2400;
+const log = console.log;
 
 const homeRouter = require("./routes/home");
 const composeRouter = require("./routes/compose");
@@ -17,9 +18,7 @@ const adminRouter = require("./routes/admin");
 app.set('view engine', 'ejs');
 app.set("views", "views");
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.use(homeRouter.route);
@@ -30,7 +29,8 @@ app.use(editRouter.route);
 app.use(adminRouter.route);
 
 db.connect(() => {
+  // db.get().collection("posts").deleteMany({}).then(result => log("DELETED ALL")).catch(error => log(error));
   app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
+    log(`Server listening on http://localhost:${port}`);
   });
 });

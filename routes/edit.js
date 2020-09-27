@@ -5,17 +5,13 @@ const _ = require("lodash");
 router.get("/edit-post/:postname", (req, res) => {
   const requestedTitle = _.lowerCase(req.params.postname);
 
-  db.get().collection("posts").find().toArray().then(posts => {
-    for (const post of posts) {
-      const title = _.lowerCase(post.title);
-      if (requestedTitle === title) {
-        res.render("edit", {
-          post: post,
-          path: "edit"
-        });
-      }
-    }
+  db.get().collection("posts").findOne({title: _.startCase(requestedTitle)}).then(post => {
+    res.render("edit", {
+      post: post,
+      path: "edit"
+    });
   }).catch(error => console.log(error));
+  
 });
 
 router.post("/edit-post", (req, res) => {
@@ -30,7 +26,7 @@ router.post("/edit-post", (req, res) => {
       body: _.capitalize(newBody)
     }
   }).then(result => {
-    console.log("Successfully updated.");
+    console.log("Post Updated Successfully.");
     res.redirect("/admin");
   }).catch(error => console.log(error));
 });
