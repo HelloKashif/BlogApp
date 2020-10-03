@@ -8,6 +8,14 @@ const posts = [];
 router.route("/compose").get((req, res) => {
   res.render("compose", {path: "compose"});
 }).post((req, res) => {
+  
+  try{
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    console.log("requestor ip is: ", ip)
+  }catch(err){
+    console.error("Error getting source ip", err)
+  }
+  
   const postTitle = req.body.postTitle;
   const postBody = req.body.postBody;
 
